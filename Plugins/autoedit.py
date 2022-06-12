@@ -1,3 +1,4 @@
+file = "Pathrosinte.Padappukal.2022.Malayalam.720p.10bit.ZEE5.WEBDL.2CH.x265.HEVC.Esub~HDTalkies \n\n @HDTalkies"
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -25,7 +26,16 @@ async def editing(bot, message):
          pass 
       if (message.document or message.video or message.audio): 
           if message.caption:                        
-             file_caption = f"**{message.caption}**"                
+             file_caption = f"**{message.caption}**"
+             if '.' in file:
+                 file_Cap = ''+''
+                 file  = file.split('.')
+                 for files in file:
+                     if '@' in files :
+                         print(files)
+                     else:
+                         file_Cap =file_Cap + " "+ ''.join(files)
+                 file_caption = file_Cap
           else:
              file_caption = ""           
                                                  
@@ -56,3 +66,6 @@ async def editing(bot, message):
               
                    
       
+
+
+
