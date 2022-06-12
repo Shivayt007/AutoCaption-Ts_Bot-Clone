@@ -27,9 +27,9 @@ async def editing(bot, message):
       if (message.document or message.video or message.audio): 
           if message.caption:                        
              file_caption = f"**{message.caption}**"
-             if '.' in file:
+             if '.' in file_caption:
                  file_Cap = ''+''
-                 file  = file.split('.')
+                 file  = file_caption.split('.')
                  for files in file:
                      if '@' in files :
                          print(files)
